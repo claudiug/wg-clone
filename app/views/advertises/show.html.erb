@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @advertise.price %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @advertise.duration %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @advertise.from_date %>
+</p>
+
+<p>
+  <strong>Until date:</strong>
+  <%= @advertise.until_date %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @advertise.active %>
+</p>
+
+<%= link_to 'Edit', edit_advertise_path(@advertise) %> |
+<%= link_to 'Back', advertises_path %>

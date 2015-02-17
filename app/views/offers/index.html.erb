@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Offers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Postal code</th>
+      <th>House number</th>
+      <th>Zip code</th>
+      <th>Room size</th>
+      <th>Cost per month</th>
+      <th>Deposit</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offers.each do |offer| %>
+      <tr>
+        <td><%= offer.address %></td>
+        <td><%= offer.postal_code %></td>
+        <td><%= offer.house_number %></td>
+        <td><%= offer.zip_code %></td>
+        <td><%= offer.room_size %></td>
+        <td><%= offer.cost_per_month %></td>
+        <td><%= offer.deposit %></td>
+        <td><%= offer.title %></td>
+        <td><%= offer.description %></td>
+        <td><%= link_to 'Show', offer %></td>
+        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Offer', new_offer_path %>

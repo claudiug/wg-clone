@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :offers
+
+  resources :advertises
+
+  resources :rent_types
+
+  resources :categories
+
+  resources :city_districts
+
+  resources :cities
+
+  resources :countries
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

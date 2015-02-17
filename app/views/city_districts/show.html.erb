@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @city_district.name %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @city_district.population %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @city_district.salary %>
+</p>
+
+<p>
+  <strong>Medium rent:</strong>
+  <%= @city_district.medium_rent %>
+</p>
+
+<%= link_to 'Edit', edit_city_district_path(@city_district) %> |
+<%= link_to 'Back', city_districts_path %>

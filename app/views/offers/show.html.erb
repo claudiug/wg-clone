@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @offer.address %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @offer.postal_code %>
+</p>
+
+<p>
+  <strong>House number:</strong>
+  <%= @offer.house_number %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @offer.zip_code %>
+</p>
+
+<p>
+  <strong>Room size:</strong>
+  <%= @offer.room_size %>
+</p>
+
+<p>
+  <strong>Cost per month:</strong>
+  <%= @offer.cost_per_month %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @offer.deposit %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @offer.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @offer.description %>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>

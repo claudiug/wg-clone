@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing City Districts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Population</th>
+      <th>Salary</th>
+      <th>Medium rent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @city_districts.each do |city_district| %>
+      <tr>
+        <td><%= city_district.name %></td>
+        <td><%= city_district.population %></td>
+        <td><%= city_district.salary %></td>
+        <td><%= city_district.medium_rent %></td>
+        <td><%= link_to 'Show', city_district %></td>
+        <td><%= link_to 'Edit', edit_city_district_path(city_district) %></td>
+        <td><%= link_to 'Destroy', city_district, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New City district', new_city_district_path %>
