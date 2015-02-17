@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
+  get 'listing/index'
+
+  get 'default/index'
+
   resources :users
 
   resources :offers
 
-  resources :advertises
+  resources :advertises, only: [:index, :show]
 
-  resources :rent_types
+  resources :rent_types, only: [:index, :show]
 
-  resources :categories
+  resources :categories, only: [:index, :show]
 
-  resources :city_districts
+  resources :city_districts, only: [:index, :show]
 
-  resources :cities
+  resources :cities, only: [:index, :show]
 
-  resources :countries
+  resources :countries, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
