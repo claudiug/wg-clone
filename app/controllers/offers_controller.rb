@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  before_action :authorize, only: [:create, :destroy, :update, :edit, :new]
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
