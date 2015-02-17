@@ -27,6 +27,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
