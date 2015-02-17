@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217182625) do
+ActiveRecord::Schema.define(version: 20150217213417) do
 
   create_table "advertises", force: :cascade do |t|
     t.string   "price"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150217182625) do
     t.string   "name"
     t.string   "population"
     t.string   "medium_salary"
-    t.string   "merium_rent"
+    t.string   "medium_rent"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "country_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150217182625) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
+    t.integer  "city_id"
   end
 
   create_table "rent_types", force: :cascade do |t|

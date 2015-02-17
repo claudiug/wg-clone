@@ -14,7 +14,10 @@
 #  description    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  user_id        :integer
+#  city_id        :integer
 #
+
 require 'elasticsearch/model'
 
 
@@ -24,6 +27,7 @@ class Offer < ActiveRecord::Base
   has_many :rent_types
   has_one :category
   belongs_to :user
+  belongs_to :city
 
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
@@ -32,6 +36,7 @@ class Offer < ActiveRecord::Base
     end
   end
 
+  #TODO response is hashies witch is quite slow. Maybe raw response -> struct
   def self.search(query)
     __elasticsearch__.search(
         {

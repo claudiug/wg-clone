@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :advertises, only: [:index, :show]
   resources :rent_types, only: [:index, :show]
   resources :categories, only: [:index, :show]
-  resources :city_districts, only: [:index, :show]
   resources :cities, only: [:index, :show]
   resources :countries, only: [:index, :show]
+  resources :cities do
+    resources :city_districts, only: [:index, :show]
+  end
 end
