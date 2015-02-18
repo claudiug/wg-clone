@@ -16,7 +16,7 @@
 #  updated_at     :datetime         not null
 #  user_id        :integer
 #  city_id        :integer
-#  offer_image    :string
+#  offer_image_id :string
 #
 
 require 'elasticsearch/model'

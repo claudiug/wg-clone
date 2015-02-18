@@ -26,3 +26,16 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+TODO
+- add relations*
+- add proper routes*
+- add ES*
+- add autocomplete*
+- add search*
+- add dev task for populate db*
+- add geocoder
+- add test
+- add twitterbootstrap*
+- add auth*
+- send emails
+- add upload photos*
