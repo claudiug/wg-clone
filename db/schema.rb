@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218085242) do
+ActiveRecord::Schema.define(version: 20150218172029) do
 
   create_table "advertises", force: :cascade do |t|
-    t.string   "price"
-    t.string   "duration"
-    t.string   "from_date"
-    t.string   "until_date"
-    t.string   "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "price"
+    t.integer  "duration"
+    t.datetime "from_date"
+    t.datetime "until_date"
+    t.boolean  "active",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20150218085242) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
-    t.string   "population"
-    t.string   "medium_salary"
-    t.string   "medium_rent"
+    t.integer  "population"
+    t.decimal  "medium_salary"
+    t.decimal  "medium_rent"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "country_id"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20150218085242) do
 
   create_table "city_districts", force: :cascade do |t|
     t.string   "name"
-    t.string   "population"
+    t.integer  "population"
     t.string   "salary"
-    t.string   "medium_rent"
+    t.decimal  "medium_rent"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "city_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150218085242) do
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "population"
+    t.integer  "population"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150218085242) do
     t.string   "postal_code"
     t.string   "house_number"
     t.string   "zip_code"
-    t.string   "room_size"
-    t.string   "cost_per_month"
+    t.integer  "room_size"
+    t.integer  "cost_per_month"
     t.string   "deposit"
     t.string   "title"
     t.string   "description"
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20150218085242) do
     t.integer  "user_id"
     t.integer  "city_id"
     t.string   "offer_image_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "rent_types", force: :cascade do |t|

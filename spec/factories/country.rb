@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :country do
-    name "MyString"
-    email "MyString"
+    name "Germany"
+    description "description"
+    population "350000"
   end
 
 end

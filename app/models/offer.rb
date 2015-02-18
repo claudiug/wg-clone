@@ -7,8 +7,8 @@
 #  postal_code    :string
 #  house_number   :string
 #  zip_code       :string
-#  room_size      :string
-#  cost_per_month :string
+#  room_size      :integer
+#  cost_per_month :integer
 #  deposit        :string
 #  title          :string
 #  description    :string
@@ -31,6 +31,9 @@ class Offer < ActiveRecord::Base
   belongs_to :city
 
   attachment :offer_image
+
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do

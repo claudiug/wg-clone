@@ -1,11 +1,10 @@
 FactoryGirl.define do
   factory :advertise do
-    sequence :name do |x|
-      "name_#{x}"
-    end
-    sequence :email do |x|
-      "email_#{x}@example.net"
-    end
-    offer
+    sequence(:price){|n|}
+    duration 100
+    from_date Time.now
+    until_date Time.now
+    active true
+    price 12
   end
 end

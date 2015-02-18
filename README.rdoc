@@ -39,3 +39,4 @@ TODO
 - add auth*
 - send emails
 - add upload photos*
+- proper types for columns*

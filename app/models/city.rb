@@ -4,9 +4,9 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string
-#  population    :string
-#  medium_salary :string
-#  medium_rent   :string
+#  population    :integer
+#  medium_salary :decimal(, )
+#  medium_rent   :decimal(, )
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  country_id    :integer

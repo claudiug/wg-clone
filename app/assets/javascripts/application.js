@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-// = require twitter/typeahead.min
 //= require turbolinks
 //= require jquery
+//= require bloodhound.min
+//= require typeahead.bundle.min
+//= require typeahead.jquery.min
 //= require bootstrap-sprockets
 
 
