@@ -6,9 +6,9 @@
   <% @offers.response.hits.hits.each do |offer| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= link_to(image_tag("125x125.jpg"), offer_path(offer._source.id), class: "thumbnail")%>
+          <%= link_to(image_tag("125x125.jpg"), offer_path(offer._id), class: "thumbnail")%>
           <div class="caption">
-            <h4>Price: <%= offer._source.cost_per_month %></h4>
+            <h4></h4>
           </div>
         </div>
       </div>

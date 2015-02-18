@@ -29,6 +29,8 @@ gem 'kaminari-bootstrap'
 gem 'bcrypt', '~> 3.1.7'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem "mini_magick"
+gem "refile", require: ["refile/rails", "refile/image_processing"]
 
 # Use Unicorn as the app server
 # gem 'unicorn'

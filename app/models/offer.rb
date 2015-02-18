@@ -29,6 +29,8 @@ class Offer < ActiveRecord::Base
   belongs_to :user
   belongs_to :city
 
+  attachment :offer_image
+
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
       indexes :title, analyzer: 'english'
@@ -52,3 +54,9 @@ class Offer < ActiveRecord::Base
 end
 
 Offer.import
+
+o = Offer.first
+File.open("/home/claudiu/Downloads/cat-businessman.jpg", "rb") do |file|
+  o.offer_image = file
+end
+o.save
