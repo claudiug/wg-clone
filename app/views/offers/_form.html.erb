@@ -47,7 +47,11 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <div class="actions">
+    <div class="field">
+      <%= f.label :offer_image %><br>
+      <%= f.attachment_field :offer_image %>
+    </div>
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

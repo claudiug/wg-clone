@@ -44,6 +44,13 @@
   <strong>Description:</strong>
   <%= @offer.description %>
 </p>
+<p>
+  <strike>IMAGE</strike>
+  <%= image_tag attachment_url(@offer, :offer_image, :fill, 300, 300) %>`
+</p>
+
+<%= link_to "Image", attachment_url(@offer, :offer_image) %>
+
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
 <%= link_to 'Back', offers_path %>

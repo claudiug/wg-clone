@@ -32,6 +32,8 @@ gem 'elasticsearch-rails'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 
+gem 'twitter-typeahead-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

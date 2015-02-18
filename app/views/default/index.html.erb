@@ -5,7 +5,7 @@
 <em>2 rooms in Pankow</em>
 
 <%= form_tag search_index_path, method: :get do %>
-    <%= text_area_tag "search", params["q"] %>
+    <%= text_field_tag "query", params["query"], placeholder: "search", class: 'typeahead form-control searchbox' %>
     <%= submit_tag "Search" %>
 <% end %>
 

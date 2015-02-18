@@ -2,7 +2,10 @@ namespace :dev do
   desc "Add fake data for testing"
   task populate_db: :environment do
     require 'faker'
-    #TODO use faker and add more data
+    City.delete_all
+    Offer.delete_all
+    Category.delete_all
+    RentType.delete_all
     country = Country.create!(name: "Germany")
     City.create!(name: "Berlin", country_id: country.id, population: "350000")
     City.create!(name: "Bonn", country_id: country.id, population: "200000")
@@ -18,29 +21,36 @@ namespace :dev do
       description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Berlin").id)
     end
 
-    20.times do |n|
+    10.times do |n|
       Offer.create!(title: Faker::Lorem.sentence, address: Faker::Address.secondary_address, postal_code: Faker::Address.country_code,
                     description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Bonn").id)
     end
 
-    20.times do |n|
+    10.times do |n|
       Offer.create!(title: Faker::Lorem.sentence, address: Faker::Address.street_address, postal_code: Faker::Address.country_code,
                     description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Munchen").id)
     end
 
-    20.times do |n|
+    10.times do |n|
       Offer.create!(title: Faker::Lorem.sentence, address: Faker::Address.secondary_address, postal_code: Faker::Address.country_code,
                     description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Hamburg").id)
     end
 
-    20.times do |n|
+    10.times do |n|
       Offer.create!(title: Faker::Lorem.sentence, address: Faker::Address.street_address, postal_code: Faker::Address.country_code,
                     description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Koln").id)
     end
 
-    20.times do |n|
+    10.times do |n|
       Offer.create!(title: Faker::Lorem.sentence, address: Faker::Address.secondary_address, postal_code: Faker::Address.country_code,
                     description: Faker::Lorem.sentence, user_id: n, city_id: City.find_by(name: "Ulm").id)
+    end
+
+    Offer.all.each do |o|
+      File.open("/home/claudiu/Downloads/foo.jpg", "rb") do |file|
+        o.offer_image = file
+        o.save
+       end
     end
 
 

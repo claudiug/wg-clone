@@ -12,7 +12,36 @@
 //
 //= require jquery
 //= require jquery_ujs
+// = require twitter/typeahead.min
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+
+
 //= require_tree .
+
+$(function() {
+    var o = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 10,
+        remote: '/autocomplete?query=%QUERY'
+    });
+
+    // initialize the bloodhound suggestion engine
+    o.initialize();
+
+    $('input.typeahead').typeahead(
+        {
+            hint: true,
+            highlight: true,
+            limit: 10
+        },
+        {
+            name: 'posts',
+            displayKey: 'name',
+            source: o.ttAdapter()
+        }
+    );
+
+});

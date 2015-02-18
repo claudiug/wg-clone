@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'register/new'
-
+  get 'autocomplete', to: 'search#autocomplete'
   root "default#index"
   resources :listing, only: [:index]
   resources :search, only: [:index]

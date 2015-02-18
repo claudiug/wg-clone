@@ -16,6 +16,7 @@
 #  updated_at     :datetime         not null
 #  user_id        :integer
 #  city_id        :integer
+#  offer_image    :string
 #
 
 require 'elasticsearch/model'
@@ -55,8 +56,8 @@ end
 
 Offer.import
 
-o = Offer.first
-File.open("/home/claudiu/Downloads/cat-businessman.jpg", "rb") do |file|
-  o.offer_image = file
-end
-o.save
+# o = Offer.first
+# File.open("/home/claudiu/Downloads/foo.jpg", "rb") do |file|
+#   o.offer_image = file
+# end
+# o.save
