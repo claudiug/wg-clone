@@ -1,2 +1,24 @@
-<h1>Listing#index</h1>
-<p>Find me in app/views/listing/index.html.erb</p>
+<div class="row">
+  <% @offers.each do |offer| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= link_to(image_tag(attachment_url(offer, :offer_image)), offer_path(offer)) %>
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+
+            <p><%= offer.title %></p>
+
+            <p><a href="#" class="btn btn-primary" role="button">Button</a>
+              <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <%= paginate @offers %>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
