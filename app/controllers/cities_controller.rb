@@ -9,6 +9,6 @@ class CitiesController < ApplicationController
   end
 
   def city_params
-    params.require(:city).permit(:name, :population, :medium_salary, :merium_rent)
+    params.require(:city).permit(:name, :population, :medium_salary, :medium_rent)
   end
 end

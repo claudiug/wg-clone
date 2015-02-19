@@ -16,4 +16,8 @@ class City < ActiveRecord::Base
   belongs_to :country
   has_many :city_districts
   has_many :offers
+  validates :name, presence: true
+  validates :population, numericality: {only_integer: true}
+  validates :medium_rent, presence: true
+  validates :medium_salary, presence: true
 end

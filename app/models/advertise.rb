@@ -13,4 +13,9 @@
 #
 
 class Advertise < ActiveRecord::Base
+  validates :price, presence: true
+  validates :duration, numericality: {only_integer: true}
+  validates :from_date, presence: true
+  validates :until_date, presence: true
+  validates :active, presence: true
 end

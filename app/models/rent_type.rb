@@ -11,4 +11,5 @@
 
 class RentType < ActiveRecord::Base
   belongs_to :offer
+  validates :name, presence: true
 end

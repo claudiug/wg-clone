@@ -14,4 +14,8 @@
 
 class CityDistrict < ActiveRecord::Base
   belongs_to :city
+  validates :name, presence: true
+  validates :population, numericality: {only_integer: true}
+  validates :salary, presence: true
+  validates :medium_rent, presence: true
 end

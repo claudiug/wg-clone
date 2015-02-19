@@ -9,10 +9,20 @@
 #  offer_id   :integer
 #
 
-require 'spec_helper'
+require 'rails_helper'
 
 describe RentType do
   let(:rent_type) do
     create(:rent_type)
+  end
+
+  it 'is valid with all fields' do
+    expect(build(:rent_type)).to be_valid
+  end
+
+  it 'is invalid without name' do
+    a = build(:rent_type, name: nil)
+    a.valid?
+    expect(a.errors[:name]).to eq ["can't be blank"]
   end
 end

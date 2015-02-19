@@ -18,6 +18,7 @@ FactoryGirl.define do
     sequence :email do |x|
       "email_#{x}@example.net"
     end
+    password "qwe123"
   end
 
 end

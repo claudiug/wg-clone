@@ -30,6 +30,16 @@ class Offer < ActiveRecord::Base
   belongs_to :user
   belongs_to :city
 
+  validates :address, presence: true
+  validates :description, presence: true
+  validates :cost_per_month, presence: true
+  validates :deposit, presence: true
+  validates :house_number, presence: true
+  validates :postal_code, presence: true
+  validates :title, presence: true
+  validates :room_size, presence: true
+  validates :zip_code, presence: true
+
   attachment :offer_image
 
   geocoded_by :address

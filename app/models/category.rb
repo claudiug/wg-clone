@@ -12,4 +12,6 @@
 
 class Category < ActiveRecord::Base
   belongs_to :offer
+  validates :name, presence: true
+  validates :description, presence: true
 end

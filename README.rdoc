@@ -33,10 +33,11 @@ TODO
 - add autocomplete*
 - add search*
 - add dev task for populate db*
-- add geocoder
+- add geocoder*
 - add test
 - add twitterbootstrap*
 - add auth*
 - send emails
 - add upload photos*
 - proper types for columns*
+- add models validations
