@@ -17,6 +17,9 @@
 #  user_id        :integer
 #  city_id        :integer
 #  offer_image_id :string
+#  latitude       :float
+#  longitude      :float
+#  valid_until    :datetime
 #
 
 require 'rails_helper'

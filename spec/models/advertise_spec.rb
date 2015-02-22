@@ -10,6 +10,7 @@
 #  active     :boolean          default("t")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  offer_id   :integer
 #
 
 require 'rails_helper'

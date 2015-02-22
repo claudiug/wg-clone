@@ -17,6 +17,9 @@
 #  user_id        :integer
 #  city_id        :integer
 #  offer_image_id :string
+#  latitude       :float
+#  longitude      :float
+#  valid_until    :datetime
 #
 
 require 'elasticsearch/model'
@@ -29,6 +32,7 @@ class Offer < ActiveRecord::Base
   has_one :category
   belongs_to :user
   belongs_to :city
+  has_many :advertises
 
   validates :address, presence: true
   validates :description, presence: true
@@ -44,6 +48,21 @@ class Offer < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
+  after_create do
+    update(valid_until: created_at + 30.days) #ONLY 30 DAYS
+  end
+
+  class OfferTimeStatus < Struct.new(:name, :days);end
+
+  def time_until_expire
+    if valid_until.past?
+      OfferTimeStatus.new("expired", Time.now.to_date.mjd - valid_until.to_date.mjd)
+    elsif valid_until.today?
+      OfferTimeStatus.new("expire_today", Time.now.to_date.mjd - valid_until.to_date.mjd)
+    else
+      OfferTimeStatus.new("valid", valid_until.to_date.mjd - Time.now.to_date.mjd)
+    end
+  end
 
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
@@ -74,3 +93,4 @@ Offer.import
 #   o.offer_image = file
 # end
 # o.save
+
