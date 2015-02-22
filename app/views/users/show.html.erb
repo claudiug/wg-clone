@@ -20,6 +20,13 @@
       <div class="small-3 columns">
         <ul class="pricing-table">
           <li class="title">Standard</li>
+          <% if offer.time_until_expire.name == "expired" %>
+            <li class="bullet-item">The offer has  expired for <%= offer.time_until_expire.days %> days</li>
+          <% elsif offer.time_until_expire.name == "today" %>
+              <li class="bullet-item">The offer is valid just today</li>
+          <% else %>
+              <li class="bullet-item">The offer is valid for <%= offer.time_until_expire.days %> days</li>
+        <%end%>
           <li class="price">$99.99</li>
           <li class="description">An awesome description</li>
           <li class="bullet-item">1 Database</li>
