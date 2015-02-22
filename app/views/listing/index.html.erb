@@ -1,24 +1,17 @@
-<div class="row">
+
+
+<div class="row" data-equalizer>
   <% @offers.each do |offer| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= link_to(image_tag(attachment_url(offer, :offer_image)), offer_path(offer)) %>
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-
-            <p><%= offer.title %></p>
-
-            <p><a href="#" class="btn btn-primary" role="button">Button</a>
-              <a href="#" class="btn btn-default" role="button">Button</a></p>
-          </div>
-        </div>
+      <div class="large-4 columns">
+        <ul class="pricing-table">
+          <li class="title">Standard</li>
+          <li class="price">$99.99</li>
+          <li class="description">An awesome description</li>
+          <li class="bullet-item">1 Database</li>
+          <li class="bullet-item">5GB Storage</li>
+          <li class="bullet-item">20 Users</li>
+          <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+        </ul>
       </div>
-  <% end %>
-</div>
-<div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-4">
-    <%= paginate @offers %>
-  </div>
-  <div class="col-sm-4"></div>
+  <%end%>
 </div>

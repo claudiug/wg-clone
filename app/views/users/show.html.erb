@@ -12,3 +12,19 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<%= @user.offers.count  %>
+
+<div class="row" data-equalizer>
+  <% @user.offers.each do |offer| %>
+      <div class="small-3 columns">
+        <ul class="pricing-table">
+          <li class="title">Standard</li>
+          <li class="price">$99.99</li>
+          <li class="description">An awesome description</li>
+          <li class="bullet-item">1 Database</li>
+          <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+        </ul>
+      </div>
+  <%end%>
+</div>

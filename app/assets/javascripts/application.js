@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require jquery
 //= require bloodhound.min
 //= require typeahead.bundle.min
 //= require typeahead.jquery.min
-//= require bootstrap-sprockets
 
 
 //= require_tree .
@@ -47,3 +47,5 @@ $(function() {
     );
 
 });
+
+$(function(){ $(document).foundation(); });
