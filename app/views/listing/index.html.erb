@@ -1,5 +1,13 @@
-
-
+<h2>Filter</h2>
+<%= params %>
+<%= @offers.size %>
+</br>
+<%= City.find_by(name: params[:city]).offers.class %>
+</br>
+<%= City.find_by(name: params[:city]).offers.all.class %>
+<br>
+<%= City.find_by(name: params[:city]).offers.all.to_a.class %>
+<br>
 <div class="row" data-equalizer>
   <% @offers.each do |offer| %>
       <div class="large-4 columns">

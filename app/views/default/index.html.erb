@@ -27,163 +27,104 @@
       </ul>
     </section>
   </nav>
-<div class="row">
-  <div class="large-6 columns">
-    <form>
-      <div class="row collapse">
-        <div class="small-3 large-2 columns">
-          <span class="prefix">http://</span>
-        </div>
-        <div class="small-9 large-10 columns">
-          <input type="text" placeholder="Enter your URL...">
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="row collapse">
-            <div class="small-10 columns">
-              <input type="text" placeholder="Hex Value">
-            </div>
-            <div class="small-2 columns">
-              <a href="#" class="button postfix">Go</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-6 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">Label</span>
-            </div>
-            <div class="small-9 columns">
-              <input type="text" placeholder="Value">
-            </div>
-          </div>
-        </div>
-        <div class="large-6 columns">
-          <div class="row collapse postfix-radius">
-            <div class="small-9 columns">
-              <input type="text" placeholder="Value">
-            </div>
-            <div class="small-3 columns">
-              <span class="postfix">Label</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-6 columns">
-          <div class="row collapse prefix-round">
-            <div class="small-3 columns">
-              <a href="#" class="button prefix">Go</a>
-            </div>
-            <div class="small-9 columns">
-              <input type="text" placeholder="Value">
-            </div>
-          </div>
-        </div>
-        <div class="large-6 columns">
-          <div class="row collapse postfix-round">
-            <div class="small-9 columns">
-              <input type="text" placeholder="Value">
-            </div>
-            <div class="small-3 columns">
-              <a href="#" class="button postfix">Go</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="#" class="button expand">Expanded Button</a>
-    </form>
-  </div>
-  <div class="large-6 columns">
-    <ul class="example-orbit-content" data-orbit
-        data-options="animation:slide;
+  <div class="row">
+    <div class="large-6 columns">
+      <%= form_tag "/listing", method: :get do %>
+          <%= text_field_tag(:city) %>
+          <%= text_field_tag(:max_room_size) %>
+          <%= text_field_tag(:min_room_size) %>
+          <%= text_field_tag(:max_cost) %>
+          <%= text_field_tag(:min_cost) %>
+          <%= submit_tag "search" %>
+      <% end %>
+    </div>
+    <div class="large-6 columns">
+      <ul class="example-orbit-content" data-orbit
+          data-options="animation:slide;
                   pause_on_hover:true;
                   animation_speed:300;
                   navigation_arrows:true;
                   bullets:true;">
-      <li data-orbit-slide="headline-1">
-        <div>
-          <h2>Headline 1</h2>
+        <li data-orbit-slide="headline-1">
+          <div>
+            <h2>Headline 1</h2>
 
-          <h3>Subheadline</h3>
-        </div>
-      </li>
-      <li data-orbit-slide="headline-2">
-        <div>
-          <h2>Headline 2</h2>
+            <h3>Subheadline</h3>
+          </div>
+        </li>
+        <li data-orbit-slide="headline-2">
+          <div>
+            <h2>Headline 2</h2>
 
-          <h3>Subheadline</h3>
-        </div>
-      </li>
-      <li data-orbit-slide="headline-3">
-        <div>
-          <h2>Headline 3</h2>
+            <h3>Subheadline</h3>
+          </div>
+        </li>
+        <li data-orbit-slide="headline-3">
+          <div>
+            <h2>Headline 3</h2>
 
-          <h3>Subheadline</h3>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="row" data-equalizer>
-  <div class="large-6 columns">
-    <ul class="pricing-table" data-equalizer-watch>
-      ...
-      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
-    </ul>
-  </div>
-  <div class="large-6 columns">
-    <ul class="pricing-table" data-equalizer-watch>
-      ...
-      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
-    </ul>
-  </div>
-</div>
-<div class="row" data-equalizer>
-  <div class="large-6 columns">
-    <ul class="pricing-table" data-equalizer-watch>
-      ...
-      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
-    </ul>
-  </div>
-  <div class="large-6 columns">
-    <ul class="pricing-table" data-equalizer-watch>
-      ...
-      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
-    </ul>
-  </div>
-</div>
-<!-- Footer -->
-<footer class="row">
-  <div class="large-12 colums">
-    <div class="icon-bar five-up">
-      <a class="item">
-        <%= image_tag("svgs/fi-home.svg") %>
-        <label>Home</label>
-      </a>
-      <a class="item">
-        <%= image_tag("svgs/fi-bookmark.svg") %>
-        <label>Bookmark</label>
-      </a>
-      <a class="item">
-        <%= image_tag("svgs/fi-info.svg") %>
-        <label>Info</label>
-      </a>
-      <a class="item">
-        <%= image_tag("svgs/fi-mail.svg") %>
-        <label>Mail</label>
-      </a>
-      <a class="item">
-        <%= image_tag("svgs/fi-like.svg") %>
-        <label>Like</label>
-      </a>
+            <h3>Subheadline</h3>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-</footer>
+
+  <div class="row" data-equalizer>
+    <div class="large-6 columns">
+      <ul class="pricing-table" data-equalizer-watch>
+        ...
+        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+      </ul>
+    </div>
+    <div class="large-6 columns">
+      <ul class="pricing-table" data-equalizer-watch>
+        ...
+        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" data-equalizer>
+    <div class="large-6 columns">
+      <ul class="pricing-table" data-equalizer-watch>
+        ...
+        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+      </ul>
+    </div>
+    <div class="large-6 columns">
+      <ul class="pricing-table" data-equalizer-watch>
+        ...
+        <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="row">
+    <div class="large-12 colums">
+      <div class="icon-bar five-up">
+        <a class="item">
+          <%= image_tag("svgs/fi-home.svg") %>
+          <label>Home</label>
+        </a>
+        <a class="item">
+          <%= image_tag("svgs/fi-bookmark.svg") %>
+          <label>Bookmark</label>
+        </a>
+        <a class="item">
+          <%= image_tag("svgs/fi-info.svg") %>
+          <label>Info</label>
+        </a>
+        <a class="item">
+          <%= image_tag("svgs/fi-mail.svg") %>
+          <label>Mail</label>
+        </a>
+        <a class="item">
+          <%= image_tag("svgs/fi-like.svg") %>
+          <label>Like</label>
+        </a>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <!-- End Footer -->

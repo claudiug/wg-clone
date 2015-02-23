@@ -44,6 +44,12 @@ class Offer < ActiveRecord::Base
   validates :room_size, presence: true
   validates :zip_code, presence: true
 
+  scope :max_room_size, ->(size) {where('room_size <= ?', "#{size}")}
+  scope :mim_room_size, ->(size) {where('room_size >= ?', "#{size}")}
+  scope :only_active, -> {where(is_active: true)}
+  scope :max_cost, ->(price) {where('cost_per_month <= ?', "#{price}")}
+  scope :min_cost, ->(price) {where('cost_per_month >= ?', "#{price}")}
+
   attachment :offer_image
 
   geocoded_by :address

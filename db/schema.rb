@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222224722) do
+ActiveRecord::Schema.define(version: 20150223095547) do
 
   create_table "advertises", force: :cascade do |t|
     t.decimal  "price"
@@ -70,14 +70,15 @@ ActiveRecord::Schema.define(version: 20150222224722) do
     t.string   "deposit"
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "user_id"
     t.integer  "city_id"
     t.string   "offer_image_id"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "valid_until"
+    t.boolean  "is_active",      default: true
   end
 
   create_table "rent_types", force: :cascade do |t|
