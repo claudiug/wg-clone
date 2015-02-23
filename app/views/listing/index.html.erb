@@ -1,13 +1,17 @@
 <h2>Filter</h2>
 <%= params %>
 <%= @offers.size %>
+<div class="large-6 columns">
+  <%= form_tag "/listing", method: :get do %>
+      <%= select_tag("city", options_for_select(City.pluck(:name))) %>
+      <%= text_field_tag(:max_room_size) %>
+      <%= text_field_tag(:min_room_size) %>
+      <%= text_field_tag(:max_cost) %>
+      <%= text_field_tag(:min_cost) %>
+      <%= submit_tag "search" %>
+  <% end %>
+</div>
 </br>
-<%= City.find_by(name: params[:city]).offers.class %>
-</br>
-<%= City.find_by(name: params[:city]).offers.all.class %>
-<br>
-<%= City.find_by(name: params[:city]).offers.all.to_a.class %>
-<br>
 <div class="row" data-equalizer>
   <% @offers.each do |offer| %>
       <div class="large-4 columns">
