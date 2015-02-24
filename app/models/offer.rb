@@ -90,6 +90,10 @@ class Offer < ActiveRecord::Base
         }
     )
   end
+
+  def location
+    [latitude, longitude]
+  end
 end
 
 Offer.import

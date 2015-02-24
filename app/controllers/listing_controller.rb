@@ -16,4 +16,8 @@ class ListingController < ApplicationController
   def offer_scope
     City.find_by(name: params[:city]).offers
   end
+
+  def offer_in_location
+    @offer.location
+  end
 end
